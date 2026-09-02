@@ -6,6 +6,26 @@ summary: publications
 
 ### Accepted
 
+{{< publication title="Beyond Accuracy: Evaluating Grounded Visual Evidence in Thinking with Images" venue="EMNLP 2026" paperLink="" codeLink="" award="" project="" data-topic="Selected, Large Language Models" >}}
+Xuzhao Li, Xuchen Li, Renjie Pi, Shiyu Hu, Jian Zhao, Jiahui Gao
+{{< /publication >}}
+
+{{< publication title="Targeted Decoding Intervention for Persona Inconsistency Hallucination Mitigation in Multi-Turn Dialogue" venue="EMNLP 2026" paperLink="" codeLink="" award="" project="" data-topic="Selected, Large Language Models" >}}
+Jie Bao, Yan Xu, Haojie Wu, Yu Gao, Xinyu Cui, Jian Zhao, Yong Liao, Zhen Chen
+{{< /publication >}}
+
+{{< publication title="After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents" venue="EMNLP 2026" paperLink="" codeLink="" award="" project="" data-topic="Selected, Large Language Models" >}}
+Zhiyue Xu, Xukai Wang, Zhiyuan Huang, Mingjie Zhan, Jian Zhao, Xu-Yao Zhang
+{{< /publication >}}
+
+{{< publication title="EvoCurr: Self-evolving Curriculum with Behavior Code Generation for Complex Decision-making" venue="EMNLP 2026" paperLink="" codeLink="" award="" project="" data-topic="Selected, Large Language Models" >}}
+Yang Cheng, Weiyu Ma, Zilai Wang, Wenhui Zhu, Tangjie Lv, Yujing Hu, Mohamed Elhoseiny, Yue Deng, Jian Zhao
+{{< /publication >}}
+
+{{< publication title="Synergizing Multi-Turn Chain-of-Thought Reasoning and Reinforcement Fine-Tuning for Detecting and Grounding Multi-Modal Manipulation" venue="ACM MM 2026" paperLink="" codeLink="" award="" project="" data-topic="Selected, Large Language Models" >}}
+Saijie Hou, Yuan Liu, Zikang Li, Saihui Hou, Jian Zhao, Zhaofeng He
+{{< /publication >}}
+
 {{< publication title="MAMBO-G: Magnitude-Aware Mitigation for Boosted Guidance" venue="ICML 2026" paperLink="" codeLink="" award="" project="" data-topic="Selected, Large Language Models" >}}
 Shangwen Zhu, Qianyu Peng, Zhilei Shu, Yuting Hu, Han Zhang, Andy Zheng, Xinyu Cui, Jian Zhao, Ruili Feng, Fan Cheng
 {{< /publication >}}
@@ -36,20 +56,8 @@ Xinyu Cui, Xuanfa Jin, Xue Yan, Yongcheng Zeng, Luoyang Sun, Wei Siying, Ruizhi 
 Xuzhao Li, Xuchen Li, Jian Zhao, Shiyu Hu
 {{< /publication >}}
 
-{{< publication title="Beyond Accuracy: Evaluating Grounded Visual Evidence in Thinking with Images" venue="Preprint" paperLink="" codeLink="" award="" project="" data-topic="" >}}
-Xuchen Li, Xuzhao Li, Renjie Pi, Shiyu Hu, Jian Zhao, Jiahui Gao
-{{< /publication >}}
-
-{{< publication title="Synergizing Multi-Turn Chain-of-Thought Reasoning and Reinforcement Fine-Tuning for Detecting and Grounding Multi-Modal Manipulation" venue="Preprint" paperLink="" codeLink="" award="" project="" data-topic="" >}}
-Saijie Hou, Yuan Liu, Zikang Li, Saihui Hou, Jian Zhao, Zhaofeng He
-{{< /publication >}}
-
 {{< publication title="MemeMind: A Large-Scale Multimodal Dataset with Chain-of-Thought Reasoning for Harmful Meme Detection" venue="Preprint" paperLink="" codeLink="" award="" project="" data-topic="" >}}
 Hexiang Gu, Qifan Yu, Yuan Liu, Zikang Li, Saihui Hou, Jian Zhao, Zhaofeng He
-{{< /publication >}}
-
-{{< publication title="EvoCurr: Self-evolving Curriculum with Behavior Code Generation for Complex Decision-making" venue="Preprint" paperLink="" codeLink="" award="" project="" data-topic="" >}}
-Yang Cheng, Zilai Wang, Weiyu Ma, Yue Deng, Wenhui Zhu, Yujing Hu, Tangjie Lv, Changjie Fan, Jian Zhao
 {{< /publication >}}
 
 {{< publication title="Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory" venue="Preprint" paperLink="" codeLink="" award="" project="" data-topic="" >}}
