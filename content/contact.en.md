@@ -7,21 +7,18 @@ summary: contact
 
 {{< justify >}}
 
-目前项目组开放招募，我们希望你乐观开朗，积极向上，能跟课题组的同学玩到一块去。具体表现为：
+Currently recruiting new members to join our group! We are looking for students who are positive, curious, and easy to work with. Bonus points if you:
+1. A lively interest in life beyond research.
+2. Genuine enthusiasm for games, with strong competitive gaming experience.
+3. Have experience designing or developing games
 
-1. 知道北京哪里好吃，哪里好玩！
-2. 电竞大佬，能带课题组的同学（还有老师）上分
-3. 热爱游戏，有过游戏创作经历
+AI expertise is not strictly required. What interests us more is your taste, creativity, and understanding of games. If you are interested, feel free to reach out to current group members for a referral, or send your CV directly to me at jianzhao@zgci.ac.cn .
 
-至于AI嘛，会不会无所谓（懂点更好），哈哈哈，因为组里懂AI的同学实在是太多了。
+Please keep your CV focused on experiences that genuinely reflect who you are; your gaming background, creative projects, or thoughts on games are often more useful to us than standard certificates. In your email, tell us about a game you love and how you think AI could make it more interesting, or describe a game you would like to create yourself.
 
-所有有意向的同学，欢迎你联系我课题组的同学，让他们把你的简历内推给我。实在找不到同学的话，就把你的简历发送到我的邮箱(jianzhao@zgci.ac.cn)，请不要在简历里放一些凑数的、我不感兴趣的经历(例如数学建模，英语四六级等)，还不如放你的王者分段和游戏理解。邮件正文请描述你最喜欢的一款游戏，然后描述下大AI时代，这款游戏有哪些可以跟AI结合的点。或者你自己想从头设计一款怎样的游戏。
+We welcome applicants for the 2027 cohort. Prospective 2028 PhD students are also welcome, and I may be able to recommend suitable candidates for the 2027 summer program or connect them with faculty at collaborating universities.
 
-欢迎26届的学院预备生报名，如果你是27届的准博士生，也欢迎联系我，我可以推荐你进入26年夏令营，也可以帮助你推荐共建高校老师。
-
-最后希望你能在项目组开开心心度过研究生生涯，轻轻松松实现博士毕业，然后找到一份你满意的工作！（之后被社会吊打就不归我管啦，哈哈）
+Above all, we hope you will enjoy your time in the group, do meaningful research, graduate smoothly, and find a career you are happy with.
 
 
 {{< /justify >}}
-
-{{< dino_game >}}
