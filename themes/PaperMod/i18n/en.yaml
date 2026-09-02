@@ -1,0 +1,95 @@
+- id: prev_page
+  translation: "Prev"
+
+- id: next_page
+  translation: "Next"
+
+- id: read_time
+  translation:
+    one : "1 min"
+    other: "{{ .Count }} min"
+
+- id: words
+  translation:
+    one : "word"
+    other: "{{ .Count }} words"
+
+- id: toc
+  translation: "Table of Contents"
+
+- id: translations
+  translation: "Translations"
+
+- id: home
+  translation: "Home"
+
+- id: edit_post
+  translation: "Edit"
+
+- id: code_copy
+  translation: "copy"
+
+- id: code_copied
+  translation: "copied!"
+
+- id: research_direction_1_title
+  translation: "Game for AI"
+
+- id: research_direction_1_desc
+  translation: "Use games to explore the boundaries of AI capabilities."
+
+- id: research_direction_2_title
+  translation: "AI for Game"
+
+- id: research_direction_2_desc
+  translation: "Use AI to improve efficiency across game R&D, operations, and content production."
+
+- id: research_direction_3_title
+  translation: "AI in Games"
+
+- id: research_direction_3_desc
+  translation: "Use AI to redefine game mechanics and experiences."
+
+- id: direction_projects_label
+  translation: "Selected work"
+- id: direction_1_project_1_title
+  translation: "OC-STORM on Hollow Knight"
+- id: direction_1_project_1_meta
+  translation: "ICLR 2026"
+- id: direction_2_project_1_title
+  translation: "AI Game Gallery"
+- id: direction_2_project_1_meta
+  translation: "AI-made Web games"
+- id: direction_3_project_1_title
+  translation: "City Glory"
+- id: direction_3_project_1_meta
+  translation: "🏆 Tencent Hackathon Champion"
+- id: direction_3_project_2_title
+  translation: "AI Native Games Survey"
+- id: direction_3_project_2_meta
+  translation: "arXiv 2026"
+
+- id: hero_title_line_1
+  translation: "Make Games an AI"
+- id: hero_title_line_2
+  translation: "Training Ground"
+- id: hero_subtitle_prefix
+  translation: "We at"
+- id: hero_subtitle_org
+  translation: "Zhongguancun Academy (ZGCA)"
+- id: hero_subtitle_suffix
+  translation: "build game-native intelligence, playable worlds, and AI tools for the next generation of interactive entertainment."
+- id: hero_join
+  translation: "JOIN US"
+- id: hero_gallery_games
+  translation: "AI Game Gallery"
+- id: hero_gallery_wechat
+  translation: "WeChat Official Account"
+- id: research_kicker
+  translation: "RESEARCH DIRECTIONS"
+- id: research_showcase_title_1
+  translation: "Three directions."
+- id: research_showcase_title_2
+  translation: "One playable future."
+- id: research_showcase_desc
+  translation: "We explore the future where intelligence and interactive entertainment evolve together across three directions: games as AI benchmarks, AI-powered game production, and AI-native play."

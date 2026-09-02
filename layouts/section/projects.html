@@ -1,0 +1,58 @@
+{{- define "main" -}}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+
+<div class="post-content project-list">
+  {{ .Content }}
+</div>
+
+<style>
+  .project-list {
+    margin: 20px 0;
+    font-size: 1.1em;
+  }
+  /* 每个项目一段：名称(+资助方)在左，时间在右 */
+  .project-list p {
+    position: relative;
+    padding-right: 200px;     /* 给右侧时间列留出空间 */
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+  }
+  /* 时间(markdown 里的 **加粗**) -> 固定到右侧一列，不换行 */
+  .project-list p strong {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 185px;
+    white-space: nowrap;      /* 时间区间不换行 */
+    color: #666;
+    font-weight: normal;
+    font-size: 0.95em;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  /* 资助方(markdown 里的 <span>) */
+  .project-list p span {
+    font-size: 0.9em;
+    font-family: 'KaiTi', '楷体', STKaiti, serif;
+  }
+
+  /* 窄屏：时间回到名称下方，避免挤压 */
+  @media screen and (max-width: 768px) {
+    .project-list {
+      font-size: 1em;
+    }
+    .project-list p {
+      padding-right: 0;
+    }
+    .project-list p strong {
+      position: static;
+      display: block;
+      width: auto;
+      margin-bottom: 2px;
+    }
+  }
+</style>
+
+{{- end }}{{/* end main */}}

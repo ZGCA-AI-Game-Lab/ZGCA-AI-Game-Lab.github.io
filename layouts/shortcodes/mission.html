@@ -1,0 +1,256 @@
+<style>
+/* Mission Section Styles */
+:root {
+  --quote-border-color: #f2c152;
+}
+
+:root .dark {
+  --quote-border-color: #f2c152;
+}
+
+.mission-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 0 auto 3em auto;
+  max-width: 1150px;
+}
+
+.quote-block {
+  position: relative;
+  padding: 3em;
+  flex: 1.5;
+  min-width: 300px;
+  font-family: var(--font-ui);
+  font-size: 1.2em;
+  line-height: 1.7;
+}
+
+.quote-block::before,
+.quote-block::after {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  border: 8px solid;
+  border-color: var(--quote-border-color);
+  content: "";
+}
+
+.quote-block::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.quote-block::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.mission-media-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.mission-image-stack {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1.15;
+  background-color: transparent;
+}
+
+.mission-img-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-img-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.mission-img-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+  background-color: var(--theme);
+  flex-shrink: 0;
+}
+
+.mission-img-caption {
+  margin-top: 12px;
+  color: var(--secondary);
+  font-size: 0.85em;
+  text-align: center;
+  background: transparent;
+  width: 100%;
+}
+
+.mission-img-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.mission-img-item img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  transition: transform 0.3s ease;
+}
+
+.mission-img-item img:hover {
+  transform: scale(1.03);
+}
+
+.mission-nav-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 0;
+  flex-shrink: 0;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.nav-dot::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+}
+
+.nav-dot.active {
+  background-color: #f2c152 !important;
+}
+
+.dark .nav-dot {
+  background-color: #888;
+}
+
+.dark .nav-dot.active {
+  background-color: #f2c152 !important;
+}
+
+@media screen and (max-width: 850px) {
+  .mission-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .mission-media-area {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="mission-container{{ if eq (.Get "showMedia") "false" }} mission-container--text-only{{ end }}">
+    <div class="quote-block">
+        {{ .Inner | markdownify }}
+    </div>
+    
+    {{ if ne (.Get "showMedia") "false" }}
+    <div class="mission-media-area">
+        <div class="mission-image-stack">
+            {{ if .Get "image" }}
+            <div class="mission-img-item active" data-index="0">
+                <div class="mission-img-container">
+                    {{ if .Get "link" }}<a href="{{ .Get "link" }}" target="_blank">{{ end }}
+                    <img src="{{ .Get "image" | relURL }}" alt="Mission Image 1">
+                    {{ if .Get "link" }}</a>{{ end }}
+                </div>
+                {{ if .Get "caption" }}
+                <div class="mission-img-caption">{{ .Get "caption" }}</div>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            {{ if .Get "image2" }}
+            <div class="mission-img-item" data-index="1">
+                <div class="mission-img-container">
+                    {{ if .Get "link2" }}<a href="{{ .Get "link2" }}" target="_blank">{{ end }}
+                    <img src="{{ .Get "image2" | relURL }}" alt="Mission Image 2">
+                    {{ if .Get "link2" }}</a>{{ end }}
+                </div>
+                {{ if .Get "caption2" }}
+                <div class="mission-img-caption">{{ .Get "caption2" }}</div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+
+        {{ if .Get "image2" }}
+        <div class="mission-nav-dots">
+            <div class="nav-dot active" data-index="0" onclick="switchMissionImage(this, 0)"></div>
+            <div class="nav-dot" data-index="1" onclick="switchMissionImage(this, 1)"></div>
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+
+<script>
+window.switchMissionImage = function(dotElement, index) {
+    if (window.event) window.event.stopPropagation();
+    const container = dotElement.closest('.mission-container');
+    if (!container) return;
+    
+    const dots = container.querySelectorAll('.nav-dot');
+    const items = container.querySelectorAll('.mission-img-item');
+    
+    dots.forEach((dot, i) => {
+        if (i === index) dot.classList.add('active');
+        else dot.classList.remove('active');
+    });
+    
+    items.forEach((item, i) => {
+        if (i === index) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+};
+</script>

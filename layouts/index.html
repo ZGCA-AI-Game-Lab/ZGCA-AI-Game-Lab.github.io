@@ -1,0 +1,94 @@
+{{ define "main" }}
+  {{ partial "snake_bg.html" . }}
+  <section class="cinematic-hero" aria-labelledby="cinematic-hero-title">
+    <div class="cinematic-world" aria-hidden="true"></div>
+    <div class="cinematic-vignette" aria-hidden="true"></div>
+
+    <div class="hero-game-gallery" aria-label="Try our games">
+      <div class="hero-game-gallery__stack">
+        <div class="hero-game-gallery__item is-active" data-index="0">
+          <a href="https://gallery.liruochen.cn/" target="_blank" rel="noopener noreferrer">
+            <img src="{{ "img/show/tryourgames.jpg" | relURL }}" alt="Try our games — 智游镜游戏展厅">
+          </a>
+          <span>{{ i18n "hero_gallery_games" }}</span>
+        </div>
+        <div class="hero-game-gallery__item" data-index="1" aria-hidden="true">
+          <img src="{{ "img/QRcode.jpg" | relURL }}" alt="智游镜公众号二维码">
+          <span>{{ i18n "hero_gallery_wechat" }}</span>
+        </div>
+      </div>
+      <div class="hero-game-gallery__dots" aria-label="Gallery slides">
+        <button class="is-active" type="button" data-index="0" aria-label="Show Try our games image" aria-pressed="true"></button>
+        <button type="button" data-index="1" aria-label="Show WeChat QR code" aria-pressed="false"></button>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <p class="hero-kicker">AI & Games Research Group</p>
+      {{- $heroLine1 := i18n "hero_title_line_1" -}}
+      {{- $heroLine2 := i18n "hero_title_line_2" -}}
+      <h1 id="cinematic-hero-title" aria-label="{{ $heroLine1 }} {{ $heroLine2 }}">
+        <span class="hero-title-line">
+          {{- $line1Chars := split $heroLine1 "" -}}
+          {{- range $index, $char := $line1Chars -}}
+            {{- if eq $char " " -}}
+              <span class="hero-title-space" aria-hidden="true"></span>
+            {{- else if ge $index (sub (len $line1Chars) 2) -}}
+              <span class="hero-title-char hero-title-accent" style="--letter-index: {{ $index }}">{{ $char }}</span>
+            {{- else -}}
+              <span class="hero-title-char" style="--letter-index: {{ $index }}">{{ $char }}</span>
+            {{- end -}}
+          {{- end -}}
+        </span>
+        <span class="hero-title-line">
+          {{- range $index, $char := split $heroLine2 "" -}}
+            {{- if eq $char " " -}}
+              <span class="hero-title-space" aria-hidden="true"></span>
+            {{- else -}}
+              <span class="hero-title-char" style="--letter-index: {{ $index }}">{{ $char }}</span>
+            {{- end -}}
+          {{- end -}}
+        </span>
+      </h1>
+      <p class="hero-subtitle">
+        {{ i18n "hero_subtitle_prefix" }} <a class="hero-affiliation-link" href="https://www.bza.edu.cn/" target="_blank" rel="noopener noreferrer">{{ i18n "hero_subtitle_org" }}</a>{{ if eq .Lang "en" }}&nbsp;{{ end }}{{ i18n "hero_subtitle_suffix" }}
+      </p>
+      <div class="hero-actions hero-actions--single" aria-label="Primary links">
+        <a class="hero-action hero-action--join" href="{{ "contact/" | relLangURL }}">{{ i18n "hero_join" }} <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  {{ range .Site.Pages }}
+    {{ if eq .Type "home" }} <!-- This checks if the page is of type "home" -->
+        <article class="post-single home-cinematic-content">
+            <div class="post-content">
+              {{ .Content }}
+            </div>
+        </article>
+    {{ end }}
+  {{ end }}
+  <script>
+    (function () {
+      var gallery = document.querySelector(".hero-game-gallery");
+      if (!gallery) return;
+      var items = gallery.querySelectorAll(".hero-game-gallery__item");
+      var dots = gallery.querySelectorAll(".hero-game-gallery__dots button");
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          var index = Number(dot.getAttribute("data-index"));
+          items.forEach(function (item, itemIndex) {
+            var active = itemIndex === index;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-hidden", String(!active));
+          });
+          dots.forEach(function (button, buttonIndex) {
+            var active = buttonIndex === index;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+        });
+      });
+    }());
+  </script>
+{{ end }}

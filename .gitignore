@@ -1,0 +1,13 @@
+.idea
+*.swp
+.hugo_build.lock
+.DS_Store
+node_modules/
+dist/
+build/
+.deploy_git/
+db.json
+package-lock.json
+yarn.lock
+.DS_Store
+resources/_gen/

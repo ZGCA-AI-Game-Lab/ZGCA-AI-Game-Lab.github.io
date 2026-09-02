@@ -1,0 +1,82 @@
+<div class="lab-members-grid {{ if .Get "cols" }}cols-{{ .Get "cols" }}{{ end }} {{ .Get "class" }}">
+    {{ .Inner }}
+</div>
+
+<style>
+.lab-members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 1rem; /* Increased vertical gap slightly */
+    margin-bottom: 2rem;
+}
+
+.lab-members-grid .lab-member {
+    width: calc(33.333% - 1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lab-members-grid.single-member {
+    display: block;
+}
+
+.lab-members-grid.single-member .lab-member {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+    justify-content: flex-start;
+}
+
+.lab-members-grid.single-member .lab-member .flip-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.lab-members-grid.single-member .lab-member-info {
+    flex: 1;
+}
+
+.lab-members-grid.single-member .lab-member-info h3 {
+    margin-top: 0;
+}
+
+.lab-members-grid.single-member .lab-member-info .description {
+    margin-top: 10px;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.lab-members-grid.cols-5 .lab-member {
+    width: calc(20% - 1rem);
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 768px) {
+    .lab-members-grid.single-member .lab-member {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .lab-members-grid.single-member .lab-member .flip-container {
+        margin: 0 auto 1rem auto;
+    }
+    .lab-members-grid .lab-member,
+    .lab-members-grid.cols-5 .lab-member {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .lab-members-grid .lab-member,
+    .lab-members-grid.cols-5 .lab-member {
+        width: 100%;
+    }
+}
+</style>

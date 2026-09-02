@@ -1,0 +1,81 @@
+baseURL: 'https://zgc-webcompetition.gitee.io/aigame-lab/'
+relativeURLs: false
+canonifyURLs: false
+
+title: 'AI&Game Lab @ ZGCA'
+theme: 'PaperMod'
+
+googleAnalytics: 'G-RLTHR6P78D'
+
+defaultContentLanguage: zh
+
+languages:
+  zh:
+    label: 中文
+    weight: 1
+  en:
+    label: English
+    weight: 2
+
+# Setup build timeout of hugo (in seconds)
+# FIXME: This is a workaround for rendering differnet sizes of the gif images.
+timeout: 90 # seconds
+
+pagination:
+  pagerSize: 200
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - $
+            - $
+        enable: true
+    renderer:
+      unsafe: true
+params:
+  env: production
+  DateFormat: "2006-01-02"
+  math: true
+  defaultTheme: light
+  disableThemeToggle: true
+  githubURL: "https://github.com/ZGCA-AI-Game-Lab"
+  label:
+    icon: "img/HAOAILAB_trimmed.jpg"
+  assets:
+    css:
+      - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+
+menu:
+  main:
+    - identifier: Home
+      name: HOME
+      url: /
+      weight: 10
+    - identifier: News
+      name: NEWS
+      url: /news/
+      weight: 20
+    - identifier: Projects
+      name: PROJECT
+      url: /projects/  
+      weight: 30  
+    - identifier: Publications
+      name: PUBLICATION
+      url: /publications/
+      weight: 40
+    - identifier: Members
+      name: MEMBER
+      url: /people/
+      weight: 50
+    - identifier: Join us
+      name: JOIN US
+      url: /contact/
+      weight: 60

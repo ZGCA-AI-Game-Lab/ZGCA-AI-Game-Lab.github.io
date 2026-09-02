@@ -1,0 +1,95 @@
+- id: prev_page
+  translation: "上一页"
+
+- id: next_page
+  translation: "下一页"
+
+- id: read_time
+  translation:
+    one : "1 分钟"
+    other: "{{ .Count }} 分钟"
+
+- id: words
+  translation: 
+    one: "字"
+    other: "{{ .Count }} 字"
+
+- id: toc
+  translation: "目录"
+
+- id: translations
+  translation: "语言"
+
+- id: home
+  translation: "主页"
+
+- id: edit_post
+  translation: "编辑"
+
+- id: code_copy
+  translation: "复制"
+
+- id: code_copied
+  translation: "已复制！"
+
+- id: research_direction_1_title
+  translation: "游戏驱动AI"
+
+- id: research_direction_1_desc
+  translation: "用游戏探索AI的能力边界。"
+
+- id: research_direction_2_title
+  translation: "AI赋能游戏"
+
+- id: research_direction_2_desc
+  translation: "用AI提升游戏研发、运营与内容生产效率。"
+
+- id: research_direction_3_title
+  translation: "AI原生游戏"
+
+- id: research_direction_3_desc
+  translation: "用AI重新定义游戏的玩法与体验。"
+
+- id: direction_projects_label
+  translation: "代表作品"
+- id: direction_1_project_1_title
+  translation: "空洞骑士强化学习 AI"
+- id: direction_1_project_1_meta
+  translation: "ICLR 2026"
+- id: direction_2_project_1_title
+  translation: "智游镜游戏展厅"
+- id: direction_2_project_1_meta
+  translation: "AI 制作的 Web 游戏"
+- id: direction_3_project_1_title
+  translation: "城市荣耀"
+- id: direction_3_project_1_meta
+  translation: "🏆 腾讯黑客松冠军作品"
+- id: direction_3_project_2_title
+  translation: "AI 原生游戏综述"
+- id: direction_3_project_2_meta
+  translation: "arXiv 2026"
+
+- id: hero_title_line_1
+  translation: "让游戏成为 AI"
+- id: hero_title_line_2
+  translation: "进化的训练场"
+- id: hero_subtitle_prefix
+  translation: "我们来自"
+- id: hero_subtitle_org
+  translation: "中关村学院（ZGCA）"
+- id: hero_subtitle_suffix
+  translation: "，致力于构建面向下一代互动娱乐的游戏原生智能、可玩世界与 AI 工具。"
+- id: hero_join
+  translation: "加入我们"
+- id: hero_gallery_games
+  translation: "智游镜游戏展厅"
+- id: hero_gallery_wechat
+  translation: "智游镜公众号"
+- id: research_kicker
+  translation: "研究方向"
+- id: research_showcase_title_1
+  translation: "三个方向。"
+- id: research_showcase_title_2
+  translation: "一个可玩的未来。"
+- id: research_showcase_desc
+  translation: "我们从游戏驱动的智能评测、AI 赋能的游戏生产和 AI 原生玩法三个方向出发，探索智能技术与互动娱乐共同演进的未来。"

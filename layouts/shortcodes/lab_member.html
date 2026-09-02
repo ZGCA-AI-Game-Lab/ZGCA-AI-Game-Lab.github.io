@@ -1,0 +1,21 @@
+<div class="lab-member">
+    {{ if .Get "academic" }}
+    <a class="member-profile-link" href="{{ .Get "academic" }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .Get "name" }} homepage">
+    {{ end }}
+        <div class="member-avatar">
+            <img src="{{ printf "img/members/%s" (.Get "image") | relURL }}" alt="{{ .Get "name" }}" class="lab-member-img">
+        </div>
+        <div class="lab-member-info">
+            <h3>{{ .Get "name" }}</h3>
+            {{ with .Get "role" }}<p class="member-role">{{ . }}</p>{{ end }}
+        </div>
+    {{ if .Get "academic" }}</a>{{ end }}
+    <div class="social-links">
+        {{ if .Get "twitter" }}
+        <a href="{{ .Get "twitter" }}" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+        {{ end }}
+        {{ if .Get "linkedin" }}
+        <a href="{{ .Get "linkedin" }}" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        {{ end }}
+    </div>
+</div>

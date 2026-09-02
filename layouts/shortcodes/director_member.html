@@ -1,0 +1,19 @@
+<div class="director-member">
+    {{ if .Get "academic" }}
+    <a class="member-avatar-link" href="{{ .Get "academic" }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .Get "name" }} homepage">
+    {{ end }}
+        <div class="member-avatar">
+            <img src="{{ printf "img/members/%s" (.Get "image") | relURL }}" alt="{{ .Get "name" }}">
+        </div>
+    {{ if .Get "academic" }}
+    </a>
+    {{ end }}
+    <div class="director-member-info">
+        <h3><span class="director-name">{{ .Get "name" }}</span>{{ with .Get "role" }}<span class="member-role">{{ . }}</span>{{ end }}</h3>
+        {{ if .Inner }}
+        <div class="description">
+            {{ .Inner | markdownify }}
+        </div>
+        {{ end }}
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<style>
+    #snake-canvas {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 0.2;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+    }
+    body.dark #snake-canvas {
+        opacity: 0.18;
+        mix-blend-mode: screen;
+    }
+    @media (max-width: 760px) {
+        #snake-canvas,
+        body.dark #snake-canvas {
+            opacity: 0.18;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #snake-canvas {
+            display: none;
+        }
+    }
+</style>
+<canvas id="snake-canvas" aria-hidden="true"></canvas>
+<script>
+    (function() {
+        const canvas = document.getElementById('snake-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        const gridSize = 20;
+        let snake = [];
+        let food = {};
+        let direction = 'right';
+        let gameLoop;
+        
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        
+        window.addEventListener('resize', resize);
+        resize();
+        
+        function initGame() {
+            snake = [
+                {x: 10, y: 10},
+                {x: 9, y: 10},
+                {x: 8, y: 10}
+            ];
+            spawnFood();
+            direction = 'right';
+        }
+        
+        function spawnFood() {
+            food = {
+                x: Math.floor(Math.random() * (width / gridSize)),
+                y: Math.floor(Math.random() * (height / gridSize))
+            };
+        }
+        
+        function update() {
+            // Simple AI: Move towards food
+            const head = snake[0];
+            
+            // Determine direction to move towards food
+            if (head.x < food.x) direction = 'right';
+            else if (head.x > food.x) direction = 'left';
+            else if (head.y < food.y) direction = 'down';
+            else if (head.y > food.y) direction = 'up';
+            
+            // Move snake
+            let newHead = {x: head.x, y: head.y};
+            if (direction === 'right') newHead.x++;
+            else if (direction === 'left') newHead.x--;
+            else if (direction === 'down') newHead.y++;
+            else if (direction === 'up') newHead.y--;
+            
+            // Wrap around screen
+            if (newHead.x * gridSize >= width) newHead.x = 0;
+            if (newHead.x < 0) newHead.x = Math.floor(width / gridSize) - 1;
+            if (newHead.y * gridSize >= height) newHead.y = 0;
+            if (newHead.y < 0) newHead.y = Math.floor(height / gridSize) - 1;
+
+            // A classic snake cannot pass through its own body. Reset the run when
+            // the next head position would collide with an existing segment.
+            const hitsSelf = snake.some(segment => segment.x === newHead.x && segment.y === newHead.y);
+            if (hitsSelf) {
+                initGame();
+                return;
+            }
+            
+            snake.unshift(newHead);
+            
+            // Check collision with food
+            if (Math.abs(newHead.x - food.x) < 1 && Math.abs(newHead.y - food.y) < 1) {
+                spawnFood();
+            } else {
+                snake.pop();
+            }
+        }
+        
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Keep the pixel snake inside the lab's amber palette in both themes.
+            const isDark = document.body.classList.contains('dark');
+            const amber = getComputedStyle(document.body).getPropertyValue('--game-amber').trim() || '#f2c152';
+            const foodGray = isDark ? '#b8bbc0' : '#74787d';
+            ctx.fillStyle = amber;
+            snake.forEach((segment, index) => {
+                ctx.globalAlpha = index === 0 ? 0.98 : (isDark ? 0.46 : 0.58);
+                ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
+            });
+
+            // Keep the food neutral gray so it reads as a target, not another yellow snake segment.
+            ctx.globalAlpha = 0.9;
+            ctx.fillStyle = foodGray;
+            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
+            ctx.globalAlpha = 1;
+        }
+        
+        function loop() {
+            update();
+            draw();
+            setTimeout(() => requestAnimationFrame(loop), 100);
+        }
+        
+        initGame();
+        loop();
+    })();
+</script>
