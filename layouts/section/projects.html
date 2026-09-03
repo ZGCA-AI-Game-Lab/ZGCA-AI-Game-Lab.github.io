@@ -4,7 +4,7 @@
   <h1>{{ .Title }}</h1>
 </header>
 
-<div class="post-content project-list">
+<div class="post-content project-list{{ if eq .Lang "en" }} project-list-en{{ end }}">
   {{ .Content }}
 </div>
 
@@ -33,9 +33,21 @@
     font-family: 'Courier New', Courier, monospace;
   }
   /* 资助方(markdown 里的 <span>) */
-  .project-list p span {
+  .project-list p span[style] {
     font-size: 0.9em;
     font-family: 'KaiTi', '楷体', STKaiti, serif;
+  }
+
+  /* English projects use the same geometric title font as the Publication page. */
+  .project-list-en,
+  .project-list-en p,
+  .project-list-en p strong,
+  .project-list-en p span {
+    font-family: var(--font-title) !important;
+  }
+
+  .project-list-en .project-name {
+    font-weight: 700;
   }
 
   /* 窄屏：时间回到名称下方，避免挤压 */

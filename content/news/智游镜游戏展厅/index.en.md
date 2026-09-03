@@ -1,9 +1,9 @@
 ---
-title: "元旦开黑不打烊！智游镜游戏展厅上线啦~"
+title: "Game On This New Year's Day: The Zhiyoujing Game Gallery Is Live!"
 date: 2026-01-01
 ---
-元旦开黑不打烊！智游镜游戏展厅上线啦~
+Game on this New Year's Day: the Zhiyoujing Game Gallery is live!
 
-在这里我们将呈现AI工具制作的一些web游戏，会持续更新！感谢璃若尘、楚曦、冰屋、营造同学对本网站的贡献。[戳这里立刻体验~](https://gallery.liruochen.cn/)
+The gallery showcases web games created with AI tools, with more to come. We thank Liruochen, Chuxi, Bingwu, and Yingzao for their contributions to the site. [Play now](https://gallery.liruochen.cn/).
 
-![GameGallery](GameGallery.jpg)
+![Zhiyoujing Game Gallery](../../../news/智游镜游戏展厅/GameGallery.jpg)
